@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+
+        <div class="score">
+            <h1>Your gold: {{ request.session.gold }}</h1>
+        </div>
+
+        <div id="forms">
+            <div>
+                <form action="process_money" method="POST">
+                    {% csrf_token %}
+                    <h4>Farm</h4>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="building" value="Farm">
+                    <input type="submit" class="btn" value="Find Gold!">
+                </form>
+            </div>
+            <div>
+                <form action="process_money" method="POST">
+                    {% csrf_token %}
+                    <h4>Cave</h4>
+                    <p>(earns 5-10 gold)</p>
+                    <input type="hidden" name="building" value="Cave">
+                    <input type="submit" class="btn" value="Find Gold!">
+                </form>
+            </div>
+            <div>
+                <form action="process_money" method="POST">
+                    {% csrf_token %}
+                    <h4>House</h4>
+                    <p>(earns 2-5 gold)</p>
+                    <input type="hidden" name="building" value="House">
+                    <input type="submit" class="btn" value="Find Gold!">
+                </form>
+            </div>
+            <div>
+                <form action="process_money" method="POST">
+                    {% csrf_token %}
+                    <h4>Casino</h4>
+                    <p>(earns/takes 0-50 gold)</p>
+                    <input type="hidden" name="building" value="Casino">
+                    <input type="submit" class="btn" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+
+        <div class="container activities">
+            <h2>Activities:</h2>
+            {% for value in request.session.activities %}
+            <p>{{ value }}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+</html>

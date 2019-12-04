@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#forms{
+    margin-top: 10rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+#forms form{
+    background-color: orangered;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px rgb(19, 19, 19);
+}
+form h4{
+    margin-top: 1rem;
+    font-size: 1.85rem;
+    font-weight: bold;
+}
+form .btn{
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    width: 70%;
+    border-radius: 8px;
+    background-color: gold;
+    box-shadow: 3px 3px 5px rgb(19, 19, 19);
+    transition: all 0.8s;
+}
+form .btn:hover{
+    color: #fff;
+    background-color: rgb(19, 19, 19);
+    transition: all 0.3s;
+}
+.activities{
+    margin-top: 5rem;
+}
